@@ -1,15 +1,15 @@
 package com.kotlindaggermvvm.di
 
-import dagger.android.support.AndroidSupportInjection
-import android.os.Bundle
-import android.support.v4.app.FragmentActivity
-import dagger.android.AndroidInjection
-import dagger.android.support.HasSupportFragmentInjector
 import android.app.Activity
 import android.app.Application
+import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
 import com.kotlindaggermvvm.KotlinDaggerMvvmApplication
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.HasSupportFragmentInjector
 
 
 /**

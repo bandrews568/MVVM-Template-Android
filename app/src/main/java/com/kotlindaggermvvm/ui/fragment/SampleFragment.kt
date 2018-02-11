@@ -3,10 +3,6 @@ package com.kotlindaggermvvm.ui.fragment
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.kotlindaggermvvm.R
 import com.kotlindaggermvvm.di.Injectable
 import com.kotlindaggermvvm.di.ViewModelFactory
 import javax.inject.Inject

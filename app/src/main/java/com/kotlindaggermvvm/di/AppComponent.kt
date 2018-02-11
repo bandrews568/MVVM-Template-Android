@@ -7,9 +7,9 @@ import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, AndroidSupportInjectionModule::class,
-                      ViewModelModule::class, ActivityBuilderModule::class,
-                      FragmentBuilderModule::class])
+@Component(modules = [AppModule::class,
+                      AndroidSupportInjectionModule::class,
+                      ActivityBuilderModule::class])
 interface AppComponent {
 
     @Component.Builder
