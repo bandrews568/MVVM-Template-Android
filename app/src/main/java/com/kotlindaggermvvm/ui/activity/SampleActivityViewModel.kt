@@ -4,6 +4,6 @@ import android.arch.lifecycle.ViewModel
 import javax.inject.Inject
 
 
-class SampleActivityViewModel @Inject constructor(private val sampleActivityRepository: SampleActivityRepository): ViewModel() {
+open class SampleActivityViewModel @Inject constructor(private val sampleActivityRepository: SampleActivityRepository): ViewModel() {
 
 }

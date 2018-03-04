@@ -11,7 +11,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.kotlindaggermvvm.util.TestRunner"
     }
     buildTypes {
         release {
@@ -22,23 +22,32 @@ android {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // Testing
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'org.mockito:mockito-inline:2.13.0'
+    androidTestCompile 'org.mockito:mockito-android:2.13.0'
+
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test:rules:1.0.1'
+    androidTestCompile 'com.android.support:support-annotations:26.1.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 
     // Architecture components
     String archVersion = '1.0.0'
     compile "android.arch.lifecycle:extensions:$archVersion"
     kapt "android.arch.lifecycle:compiler:$archVersion"
-
     implementation "android.arch.persistence.room:runtime:$archVersion"
     kapt "android.arch.persistence.room:compiler:$archVersion"
-
 
     // Dagger 2
     kapt 'com.google.dagger:dagger-compiler:2.14.1'
@@ -54,3 +63,5 @@ kapt {
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'kotlin-android-extensions'
